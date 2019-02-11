@@ -1,5 +1,6 @@
 [
   {
+    "containsBar": false
     "raidLevel": "1",
     "resolution": {
       "width": 1080,
@@ -13,10 +14,10 @@
     },
     "iconsList": [
       {
-		"top": 695,
-		"left": 492,
-		"width": 94,
-		"height": 94
+        "top": 695,
+        "left": 492,
+        "width": 94,
+        "height": 94
       }
     ]
   }

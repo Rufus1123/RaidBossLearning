@@ -19,10 +19,16 @@
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
         <Image Name="imgPhoto" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left"/>
-        <Image Name="croppedImg" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left"/>
-        <Path Stroke="Red" StrokeThickness="4" Grid.Column="1">
+        <Path Stroke="Red" StrokeThickness="4" Grid.Column="1" Grid.Row="0">
             <Path.Data>
-                <GeometryGroup x:Name="geometryGroep">
+                <GeometryGroup x:Name="geometryGroepFull">
+                </GeometryGroup>
+            </Path.Data>
+        </Path>
+        <Image Name="croppedImg" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left"/>
+        <Path Stroke="Red" StrokeThickness="2" Grid.Column="1" Grid.Row="1">
+            <Path.Data>
+                <GeometryGroup x:Name="geometryGroepCrop">
                 </GeometryGroup>
             </Path.Data>
         </Path>

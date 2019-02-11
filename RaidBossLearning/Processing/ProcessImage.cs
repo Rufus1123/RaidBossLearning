@@ -23,10 +23,16 @@ namespace RaidBossLearning.Processing
 
         public ImageProperty GetImageProperty()
         {
-            var raidbossIconRectangles = new ImageProperty();
             var resolution = new Resolution { Width = _screenshot.PixelWidth, Height = _screenshot.PixelHeight };
+            
+            int stride = _screenshot.PixelWidth * 4;
+            byte[] pixels = new byte[_screenshot.PixelHeight * stride];
+            _screenshot.CopyPixels(pixels, stride, 0);
+            var greenPixel = pixels.Length - 3;
 
-            return _imageProperties.Find(ip => ip.RaidLevel == _raidLevel && ip.Resolution.Equals(resolution));
+            return _imageProperties.Find(ip => ip.RaidLevel == _raidLevel && 
+                ip.Resolution.Equals(resolution) &&
+                ip.ContainsBar == (greenPixel > 30 && greenPixel < 100));
         }
 
         public CroppedBitmap GetCroppedImage(ImageProperty result)

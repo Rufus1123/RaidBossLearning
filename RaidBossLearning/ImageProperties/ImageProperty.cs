@@ -18,6 +18,8 @@ namespace RaidBossLearning.ImageProperties
         public Rectangle IconsArea { get; set; }
         [JsonProperty("iconsList")]
         public List<Rectangle> IconsList { get; set; }
+        [JsonProperty("containsBar")]
+        public bool ContainsBar { get; set; }
 
         public ImageProperty()
         {
