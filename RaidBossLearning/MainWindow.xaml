@@ -1,0 +1,52 @@
+﻿<Window x:Class="RaidBossLearning.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:src="clr-namespace:RaidBossLearning.Models"
+        xmlns:imgprop="clr-namespace:RaidBossLearning.ImageProperties"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="75*" />
+            <ColumnDefinition Width="150*" />
+            <ColumnDefinition Width="150*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Image Name="imgPhoto" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left"/>
+        <Image Name="croppedImg" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left"/>
+        <Path Stroke="Red" StrokeThickness="4" Grid.Column="1">
+            <Path.Data>
+                <GeometryGroup x:Name="geometryGroep">
+                </GeometryGroup>
+            </Path.Data>
+        </Path>
+        <StackPanel Grid.Column="0">
+            <StackPanel.Resources>
+                <src:RaidLevel x:Key="raidLevel"/>
+                <src:GymColor x:Key="gymColors"/>
+            </StackPanel.Resources>
+            <ComboBox Name="raidLevelsBox"
+            ItemsSource="{StaticResource raidLevel}"
+            Text="Raid Level or Boss"
+            IsEditable="true"
+            IsReadOnly="true" SelectionChanged="RaidLevelsBox_SelectionChanged"/>
+            <ComboBox x:Name="gymColorsBox"
+            ItemsSource="{StaticResource gymColors}"
+            Text="Gym Owner Team"
+            IsEditable="true"
+            IsReadOnly="true" SelectionChanged="GymColorsBox_SelectionChanged"/>
+        </StackPanel>
+        <Button Height="23" HorizontalAlignment="Left"
+        Margin="43,0,0,71" Name="btnLoad" VerticalAlignment="Bottom"
+        Width="75" Grid.Column="0" Click="btnLoad_Click">_Load</Button>
+        <Button Height="23" HorizontalAlignment="Left"
+        Margin="43,0,0,33" Name="btnGuess" VerticalAlignment="Bottom"
+        Width="75" Grid.Column="0" Click="btnGuess_Click">_Guess</Button>
+    </Grid>
+</Window>

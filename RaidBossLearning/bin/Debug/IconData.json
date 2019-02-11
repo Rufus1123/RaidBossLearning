@@ -1,0 +1,23 @@
+[
+  {
+    "raidLevel": "1",
+    "resolution": {
+      "width": 1080,
+      "height": 2220
+    },
+    "iconsArea": {
+      "top": 642,
+      "left": 439,
+      "width": 200,
+      "height": 200
+    },
+    "iconsList": [
+      {
+		"top": 695,
+		"left": 492,
+		"width": 94,
+		"height": 94
+      }
+    ]
+  }
+]
